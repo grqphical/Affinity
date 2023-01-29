@@ -1,6 +1,7 @@
 """Class to handle the output of the request result"""
 from requests import Response
 from requests.exceptions import JSONDecodeError
+from requests.utils import dict_from_cookiejar
 from rich.pretty import pprint
 from rich.console import Console
 
@@ -37,11 +38,17 @@ class OutputHandler:
         """Prints the result of the response to the stdout. Tries to serialize the text into a dict but if it failes it will just print it as normal text"""
         pprint(self.text)
         
-    def write_to_file(self, file_name:str, binary:bool):
+    def write_to_file(self, file_name:str):
         """Writes the response's data to a file"""
-        if binary:
-            with open(file_name, "wb") as f:
-                f.write(self.response.content)
-        else:
-            with open(file_name, "w") as f:
-                f.write(self.text)
+        with open(file_name, "w") as f:
+            f.write(self.text)
+    def write_debug_info(self):
+        """Writes Debug Information to the terminal such as the elapsed time, headers, encoding etc."""
+        self.con.print("[cyan]============DEBUG============")
+        self.con.print("[cyan]Headers: ")
+        pprint(dict(self.response.headers))
+        self.con.print("[cyan]\nEncoding: ")
+        pprint(self.response.encoding)
+        self.con.print("[cyan]\nCookies: ")
+        pprint(dict_from_cookiejar(self.response.cookies))
+        
