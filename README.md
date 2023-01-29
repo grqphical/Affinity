@@ -3,8 +3,6 @@
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/grqphical07/Affinity/blob/master/LICENSE)
-[![GitHub latest commit](https://badgen.net/github/last-commit/grqphical07/Affinity)](https://GitHub.com/grqphical07/Affinity/commit)
-[![GitHub stars](https://img.shields.io/github/stars/grqphical07/Affinity.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/grqphical07/Affinity/stargazers/)
 
 Affinity is a command line HTTP client similar to curl but made to be simplistic and easy-to-use. Affinity is written in 100% pure python
 
