@@ -1,4 +1,8 @@
-# Affinity
+
+<div align="center" float="left"><span><img src="affinity.png" width="100" height="100"></span><h1>Affinity</h1></div>
+
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/grqphical07/Affinity/blob/master/LICENSE)
 
 Affinity is a command line HTTP client similar to curl but made to be simplistic and easy-to-use. Affinity is written in 100% pure python
 
