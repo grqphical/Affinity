@@ -15,7 +15,7 @@ def main():
     parser.add_argument("-p", "--params", default=None, help="Parameters to supply in the URL", nargs='*', action=ParseDict)
     parser.add_argument("--header", default=None, help="Header data to send with the request", nargs='*', action=ParseDict)
     parser.add_argument("-d", "--debug", action="store_true", help="Shows debug information about the request")
-    parser.add_argument("--form", default=None, help="Form-encoded data to send", nargs="*", action=ParseDict)
+    parser.add_argument("--form", default=None, help="Form-encoded data to send. Pass data as KEY=VALUE", nargs="*", action=ParseDict)
     
     # Get the arguments passed in
     args = parser.parse_args()

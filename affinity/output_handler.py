@@ -44,11 +44,12 @@ class OutputHandler:
             f.write(self.text)
     def write_debug_info(self):
         """Writes Debug Information to the terminal such as the elapsed time, headers, encoding etc."""
-        self.con.print("[cyan]============DEBUG============")
+        self.con.print("\n[cyan]============DEBUG============")
         self.con.print("[cyan]Headers: ")
         pprint(dict(self.response.headers))
         self.con.print("[cyan]\nEncoding: ")
         pprint(self.response.encoding)
         self.con.print("[cyan]\nCookies: ")
         pprint(dict_from_cookiejar(self.response.cookies))
-        
+        self.con.print("[cyan]\nResponse Time:")
+        self.con.print(f"[cyan bold]{self.response.elapsed.microseconds / 1000}[/cyan bold] [cyan]ms[/cyan]")
