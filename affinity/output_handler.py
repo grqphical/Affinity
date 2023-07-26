@@ -5,6 +5,10 @@ from requests.utils import dict_from_cookiejar
 from rich.pretty import pprint
 from rich.console import Console
 
+def error(message):
+    pprint(f"[red](ERROR){message}[/red]")
+    exit(1)
+
 class OutputHandler:
     def __init__(self, response:Response):
         self.con = Console()
@@ -36,6 +40,7 @@ class OutputHandler:
 
     def print_result(self):
         """Prints the result of the response to the stdout. Tries to serialize the text into a dict but if it failes it will just print it as normal text"""
+        self.write_debug_info()
         pprint(self.text)
         
     def write_to_file(self, file_name:str):
@@ -44,7 +49,6 @@ class OutputHandler:
             f.write(self.text)
     def write_debug_info(self):
         """Writes Debug Information to the terminal such as the elapsed time, headers, encoding etc."""
-        self.con.print("\n[cyan]============DEBUG============")
         self.con.print("[cyan]Headers: ")
         pprint(dict(self.response.headers))
         self.con.print("[cyan]\nEncoding: ")
