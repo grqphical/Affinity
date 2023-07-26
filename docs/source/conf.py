@@ -29,6 +29,6 @@ html_static_path = ['_static']
 html_logo = "affinity.png"
 html_theme_options = {
     "source_repository": "https://github.com/grqphical07/affinity",
-    "source_branch": "main",
+    "source_branch": "master",
     "source_directory": "docs/source/",
 }

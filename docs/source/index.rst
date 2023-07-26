@@ -4,6 +4,8 @@ Affinity
 Affinity is a command line HTTP client similar to curl but made to be
 simplistic and easy-to-use. Affinity is written in 100% pure python
 
+`Github <https://github.com/grqphical07/affinity>`__
+
 Installation
 ------------
 
